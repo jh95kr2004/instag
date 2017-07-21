@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Instagram + Hashtag</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script src="js/particles.js-master/particles.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<style>
+			.logo-font {
+				font-family: 'Quicksand', sans-serif;
+			}
+			body {
+				background: #b80828;
+				/*background: -moz-linear-gradient(left, #e79b70 0%, #e3a19c 33%, #f26f70 66%, #f1e1b4 100%);
+				background: -webkit-linear-gradient(left, #e79b70 0%,#e3a19c 33%,#f26f70 66%,#f1e1b4 100%);
+				background: linear-gradient(to right, #e79b70 0%,#e3a19c 33%,#f26f70 66%,#f1e1b4 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e79b70', endColorstr='#f1e1b4',GradientType=1 );*/
+			}
+			nav {
+				color:white;
+				font-size:24px;
+			}
+			img#logoImg {
+				width:80%;
+			}
+			@media (min-width: 992px) {
+				img#logoImg {
+					width:100%;
+				}
+			}
+			div#topContainer canvas {
+				position:absolute;
+				top:0;
+				z-index: -1;
+			}
+		</style>
+		<script>
+			particlesJS.load('topContainer', 'assets/particles.json', function() {
+			});
+		</script>
+	</head>
+	<body class='logo-font'>
+		<div class='container-fluid' style='padding:0; padding-bottom:150px' id='topContainer'>
+			<nav class='navbar navbar-inverse'>
+				<a class="navbar-brand logo-font" href="#">
+					<img src="img/logo-hori.png" height="32" alt="">
+					Instagram + Hashtag
+				</a>
+			</nav>
+			<div class='container'>
+				<div class='row' style='padding-top:100px'>
+					<!--<div class='col-0 col-lg-2 align-self-center' style='text-align:center;'></div>
+					<div class='col-12 col-lg-4 align-self-center' style='text-align:center;'>
+						<img src='img/logo.png' id='logoImg'>
+					</div>-->
+					<div class='col-0 col-lg-4'></div>
+					<div class='col-12 col-lg-4 align-self-center' style=''>
+						<div class='logo-font' style='text-align:center; color:white; font-size:30px; padding-bottom:20px;'>
+							Instagram + Hashtag
+						</div>
+						<form>
+							<div class='form-group row' style='margin-left:0; margin-right:0'>
+								<input type='text' id='id1' class='form-control' placeholder='Instagram ID 1'>
+							</div>
+							<div class='form-group row' style='margin-left:0; margin-right:0'>
+								<input type='text' id='id2' class='form-control' placeholder='Instagram ID 2'>
+							</div>
+							<div class='form-group row' style='margin-left:0; margin-right:0'>
+								<button type='submit' class='btn btn-primary'>Submit</button>
+							</div>
+						</form>
+					</div>
+					<div class='col-0 col-lg-4'></div>
+				</div>
+			</div>
+		</div>
+		<div class='jumbotron jumbotron-fluid' style='background:#f1e1b4; margin-bottom:0'>
+			<div class="container">
+				<h1 class="display-3">About</h1>
+				<p class="lead">About.</p>
+			</div>
+		</div>
+		<div class='jumbotron jumbotron-fluid' style='background:#e3a19c; margin-bottom:0'>
+			<div class="container">
+				<h1 class="display-3">How it works</h1>
+				<p class="lead">How it works.</p>
+			</div>
+		</div>
+		<div class='jumbotron jumbotron-fluid' style='background:#f26f70; margin-bottom:0'>
+			<div class="container">
+				<h1 class="display-3">Contact</h1>
+				<p class="lead">Contact.</p>
+			</div>
+		</div>
+	</body>
+</html>
