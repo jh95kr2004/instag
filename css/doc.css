@@ -1,0 +1,67 @@
+html,body {
+	height:100%;
+	margin:0;
+}
+.logo-font {
+	font-family: 'Quicksand', sans-serif;
+}
+#topContainer {
+	padding: 0;
+	height:100%;
+	background: #b80828;
+}
+nav {
+	color:white;
+	font-size:24px;
+}
+img#logoImg {
+	width:80%;
+}
+div#topContainer canvas {
+	position:absolute;
+	top:0;
+}
+
+#mainContainer {
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#inputDiv, #resultDiv {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	width: 95%;
+    margin: auto;
+	transform: translate(-50%, -50%);
+	text-align:center;
+}
+
+.panel {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+.bottomDiv {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	border-top: 1px solid #eee;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	img#logoImg {
+		width:100%;
+	}
+	.bottomDiv {
+		padding-top: 6rem;
+		padding-bottom: 6rem;
+	}
+	#inputDiv, #resultDiv {
+		width: auto;
+	}
+}

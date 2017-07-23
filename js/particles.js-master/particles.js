@@ -566,22 +566,31 @@ var pJS = function(tag_id, params){
         }
       }
 
-      if(p.x - p.radius > pJS.canvas.w){
-        p.x = new_pos.x_left;
-        p.y = Math.random() * pJS.canvas.h;
-      }
-      else if(p.x + p.radius < 0){
-        p.x = new_pos.x_right;
-        p.y = Math.random() * pJS.canvas.h;
-      }
-      if(p.y - p.radius > pJS.canvas.h){
-        p.y = new_pos.y_top;
-        p.x = Math.random() * pJS.canvas.w;
-      }
-      else if(p.y + p.radius < 0){
-        p.y = new_pos.y_bottom;
-        p.x = Math.random() * pJS.canvas.w;
-      }
+	  if(noParticles) {
+		  if(p.x - p.radius > pJS.canvas.w || p.x + p.radius < 0 || p.y - p.radius > pJS.canvas.h || p.y + p.radius < 0) {
+			  pJS.particles.array.splice(i, 1);
+			  //pJS.particles.array.push(new pJS.fn.particle(pJS.particles.color, pJS.particles.opacity.value));
+			  i--;
+			  continue;
+		  }
+	  } else {
+		  if(p.x - p.radius > pJS.canvas.w){
+			p.x = new_pos.x_left;
+			p.y = Math.random() * pJS.canvas.h;
+		  }
+		  else if(p.x + p.radius < 0){
+			p.x = new_pos.x_right;
+			p.y = Math.random() * pJS.canvas.h;
+		  }
+		  if(p.y - p.radius > pJS.canvas.h){
+			p.y = new_pos.y_top;
+			p.x = Math.random() * pJS.canvas.w;
+		  }
+		  else if(p.y + p.radius < 0){
+			p.y = new_pos.y_bottom;
+			p.x = Math.random() * pJS.canvas.w;
+		  }
+	  }
 
       /* out of canvas modes */
       switch(pJS.particles.move.out_mode){
