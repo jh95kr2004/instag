@@ -39,22 +39,55 @@
 				top:0;
 				z-index: -1;
 			}
+			.panel {
+				height: 100%;
+				width: 100%;
+				position: absolute;
+			}
 		</style>
 		<script>
 			particlesJS.load('topContainer', 'assets/particles.json', function() {
 			});
+
+			$(document).ready(function(){
+				$("#topContainer").css("height", $("#topContainer").height());
+				$("#submitButton").on("click", function() {
+					$("#inputDiv").animate({
+						opacity:"0",
+						top:"-=25"
+					}, 250, function() {
+						$(this).css("display", "none");
+						$("#resultDiv").css("display", "");
+						$("#resultDiv").animate({
+							opacity:"1"
+						}, 250);
+					});
+				});
+				$(".return").on("click", function() {
+					$("#resultDiv").animate({
+						opacity:"0"
+					}, 250, function() {
+						$(this).css("display", "none");
+						$("#inputDiv").css("display", "");
+						$("#inputDiv").animate({
+							opacity:"1",
+							top:"+=25"
+						}, 250);
+					});
+				});
+			});
 		</script>
 	</head>
 	<body class='logo-font'>
-		<div class='container-fluid' style='padding:0; padding-bottom:150px' id='topContainer'>
+		<div class='container-fluid' style='padding:0;' id='topContainer'>
 			<nav class='navbar navbar-inverse'>
 				<a class="navbar-brand logo-font" href="#">
 					<img src="img/logo-hori.png" height="32" alt="">
 					Instagram + Hashtag
 				</a>
 			</nav>
-			<div class='container'>
-				<div class='row' style='padding-top:100px'>
+			<div class='container' id='mainContainer'>
+				<div class='row' style='padding-top:150px; padding-bottom:200px; position:relative' id='inputDiv'>
 					<!--<div class='col-0 col-lg-2 align-self-center' style='text-align:center;'></div>
 					<div class='col-12 col-lg-4 align-self-center' style='text-align:center;'>
 						<img src='img/logo.png' id='logoImg'>
@@ -72,11 +105,24 @@
 								<input type='text' id='id2' class='form-control' placeholder='Instagram ID 2'>
 							</div>
 							<div class='form-group row' style='margin-left:0; margin-right:0'>
-								<button type='submit' class='btn btn-primary'>Submit</button>
+								<button type='button' class='btn btn-primary' id='submitButton'>Submit</button>
 							</div>
 						</form>
 					</div>
 					<div class='col-0 col-lg-4'></div>
+				</div>
+				<div class='container' style='padding-top:180px; position:relative; display:none; opacity:0' id='resultDiv'>
+					<div class='row panel'>
+						<div class='col-12 col-lg-12 align-self-center' style=''>
+							<div class='logo-font' style='text-align:center; color:white; font-size:30px;' id='textDiv'>
+								Calculating results.<br>
+								Please wait.
+							</div>
+						</div>
+						<div class='col-12 col-lg-12 align-self-center' style='text-align:center; color:white;'>
+							<span class='return'>return</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
